@@ -22,12 +22,13 @@ module.exports = {
         https: false,
         hotOnly: false,
         proxy: {
-            '/api': {
-                target: 'https://admin.chavesgu.com',
-                changeOrigin: true,
-                pathRewrite: {
-                    '^/api': ''
-                }
+            '/idata/*': {
+                target: 'http://bigdata-t.duiopen.com',
+                changeOrigin: true
+            },
+            '/rest/*': {
+                target: 'http://bigdata-t.duiopen.com',
+                changeOrigin: true
             }
         },
         before: app => {}

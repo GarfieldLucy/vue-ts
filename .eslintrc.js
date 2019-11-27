@@ -5,11 +5,18 @@ module.exports = {
     },
     extends: ['plugin:vue/essential', '@vue/standard', '@vue/typescript'],
     rules: {
-        'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-        'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-        'indent': ['error', 2, { ArrayExpression: 2, ObjectExpression: 2 }]
+        indent: ['error', 4, {SwitchCase: 1}],
+        'space-before-function-paren': ['error', 'never']
     },
     parserOptions: {
         parser: '@typescript-eslint/parser'
-    }
+    },
+    overrides: [
+        {
+            files: ['**/__tests__/*.{j,t}s?(x)'],
+            env: {
+                mocha: true
+            }
+        }
+    ]
 }
